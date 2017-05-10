@@ -12,15 +12,18 @@ namespace ComicBookGallery.Controllers
 
         public ActionResult Detail()
         {
-            if (DateTime.Today.DayOfWeek==DayOfWeek.Wednesday)
+            if (DateTime.Today.DayOfWeek==DayOfWeek.Thursday)
             {
-                return new RedirectResult("http://google.com");
+                return Redirect("http://google.com");
+                //return new RedirectResult("http://google.com");
             };
 
-            return new ContentResult
-            {
-                Content= "Dit is mijn eerste MCV Controller Method"
-            };
+            return Content("Dit is mijn eerste MCV Controller Method");
+
+            //return new ContentResult
+            //{
+            //    Content= "Dit is mijn eerste MCV Controller Method"
+            //};
             // gebruiken maken van een string is niet handig bij een controler
             //return "Dit is mijn eerste MCV Controller Method";
         }
