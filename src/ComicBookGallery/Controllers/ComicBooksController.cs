@@ -8,9 +8,15 @@ namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController : Controller
     {
+        //ContentResult erft van ActionResult
 
-        public ContentResult Detail()
+        public ActionResult Detail()
         {
+            if (DateTime.Today.DayOfWeek==DayOfWeek.Wednesday)
+            {
+                return new RedirectResult("http://google.com");
+            };
+
             return new ContentResult
             {
                 Content= "Dit is mijn eerste MCV Controller Method"
