@@ -8,9 +8,15 @@ namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController : Controller
     {
-        public string Detail()
+
+        public ContentResult Detail()
         {
-            return "Dit is mijn eerste MCV Controller Method";
+            return new ContentResult
+            {
+                Content= "Dit is mijn eerste MCV Controller Method"
+            };
+            // gebruiken maken van een string is niet handig bij een controler
+            //return "Dit is mijn eerste MCV Controller Method";
         }
     }
 }
